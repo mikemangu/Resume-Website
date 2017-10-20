@@ -1,0 +1,249 @@
+/*----------------------Color Guide----------------------
+Blueberry - #687A8F
+Apricot - #F7882F
+Citrus - #F7C331
+Apple Core - #DCC7AA
+*/
+h1, h2, h3, h4, h5, h6, a {
+	font-family: 'Bellefair', serif;
+	color: #687A8F;
+}
+
+p {
+	color: #687A8F;
+}
+
+.header h1 {
+	text-align: center;
+	color: #687A8F;
+	font-family: 'Bellefair', serif;
+}
+
+.jumbotron {
+	min-height: 400px;
+	background: url("../img/michael_alcantara_tiger_marketing.jpg") center no-repeat;
+	background-size: cover;
+}
+
+.jumbotron .container {
+	position: absolute;
+	margin-top: 20px;
+	width: 200px;
+}
+
+.jumbotron h2 {
+	font-size: 22px;
+	color: #fff;
+}
+
+.main {
+	padding: 0 40px 80px;
+	vertical-align: center;
+	text-align: center;
+}
+
+.main #who p{
+	font-size: 20px;
+}
+
+.main #who .row {
+	margin: 40px 30px 0 0;
+}
+
+.main #who img {
+	border-radius: 5px;
+}
+
+.main #skills h2 {
+	font-size: 22px;
+	text-align: center;
+}
+
+.main #skills .progress {
+	margin: 22px 0;
+}
+
+.main #skills .progress .progress-bar {
+	background-color: #F7882F;
+}
+
+.main .nav .nav-tabs {
+	color: #DCC7AA;
+	text-align: center;
+}
+
+.main .nav .nav-tabs a {
+	color: #DCC7AA;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+	color: #F7882F;
+	float: none;
+	display: inline-block;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+	border: 1px solid #DCC7AA ;
+}
+
+.nav-tabs > li {
+	float: none;
+	display: inline-block;
+	zoom: 1;
+}
+
+.nav-tabs > li > a {
+    width: 192px;
+    text-align: center;
+    color: #DCC7AA;
+    font-size: 24px;
+}
+
+.main h3 {
+	text-align: center;
+	font-size: 30px;
+}
+
+.footer {
+	background-color: #F7C331;
+	min-height: 120px;
+}
+
+.footer ul li {
+	list-style: none;
+	display: inline-block;
+	float: left;
+	padding: 0 10px;
+	margin: 40px 0;
+}
+
+.footer ul li a {
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+}
+
+.footer p {
+	float; right;
+	padding: 0 20px;
+	margin: 40px 0;
+	font-size: 20px;
+	color: #fff;
+	font-family: 'Bellefair', serif;
+}
+
+/*---Work Experience Timeline---*/
+#timeline {
+  display: flex;
+  background-color: #031625;
+
+  &:hover {
+    .tl-item {
+      width: 23.3333%;
+    }
+  }
+}
+
+.tl-item {
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+  min-height: 600px;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  
+  &:before, &:after {
+    transform: translate3d(0, 0, 0);
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+  }
+
+  &:after {
+    background: transparentize(#031625, 0.15);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  &:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(0, 0, 0) translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  &:hover {
+    width: 30% !important;
+    
+    &:after {
+      opacity: 0;
+    }
+
+    &:before {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) translateY(0);
+      transition: opacity 1s ease, transform 1s ease 0.25s;
+    }
+    
+    .tl-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.75s ease 0.5s;
+    }
+
+    .tl-bg {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.tl-content {
+  transform: translate3d(0, 0, 0) translateY(25px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 1.618em;
+  top: 55%;
+  opacity: 0;
+  
+  h1 {
+    font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    color: #1779cf;
+    font-size: 1.44rem;
+    font-weight: normal;
+  }
+}
+
+.tl-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  
+  p {
+    font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.728rem;
+    line-height: 0;
+  }
+}
+
+.tl-bg {
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+}
+
+
